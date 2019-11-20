@@ -25,7 +25,7 @@ class MessageController extends Controller
         $logged_user_name = Auth::user()->name;
         $message = $this->message->GetAll($logged_user_id);
         $data = [
-            'messages'         =>   $messages,
+            'messages'         =>   $message,
             'logged_user_name' =>   $logged_user_name
         ];
         return view('message', $data);

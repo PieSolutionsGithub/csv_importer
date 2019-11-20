@@ -50,13 +50,13 @@ class CustomerController extends Controller
 				);
                 $this->customer->CustomerCreate($insertData);
 			  }else{
-				  if($check_data_type == false){
+				  if($imp_data['check_data_type'] == false){
 					$message = new Message;
 					$message->user_id = $logged_user_id;
 					$message->message = "Something went wrong in invoice ID : ".$importData[0];
 					$message->save();
 				  }
-				  if($invoice_amount == false){
+				  if($imp_data['invoice_amount'] == false){
 					$message = new Message;
 					$message->user_id = $logged_user_id;
 					$message->message = "Something went wrong in invoice ID : ".$importData[0]. " Message is : ".$importData[1];
